@@ -10,9 +10,10 @@
 export function linearSearch<T>(
   needle: T,
   haystack: T[],
-  callback?: (needle: T, item: T) => boolean
+  callback?: (needle: T, item: T) => boolean,
 ): number | null {
-  const comparison = (needle, item) => callback ? callback(needle, item) : needle === item;
+  const comparison = (needle, item) =>
+    callback ? callback(needle, item) : needle === item;
 
   for (let i = 0; i < haystack.length; i++) {
     if (comparison(needle, haystack[i])) return i;
